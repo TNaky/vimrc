@@ -6,7 +6,7 @@ Vimの設定ファイルであるvimrcについて
 
 ```zsh
 git clone https://github.com/TNaky/vimrc.git ${HOME}/.vim/vimrc
-ln -s ${HOME}/.vim/vimrc/.vimrc/ ${HOME}/.vimrc
+ln -s ${HOME}/.vim/vimrc/.vimrc ${HOME}/.vimrc
 ```
 
 # Vim環境
