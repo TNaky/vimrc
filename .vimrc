@@ -720,16 +720,19 @@ let s:is_auto_update = 1
 " rcファイルを更新する
 function! CheckUpdate()
   if executable('git')
-    let s:isupdate = system('git fetch &> /dev/null')
+    let s:isupdate = system("git --git-dir=$HOME/.vim/vimrc/.git fetch &> /dev/null")
     if s:isupdate != 0
-      let s:msg = printf(a:msg . "(Y/n) : ")
-      if input(s:msg) == 'y' || input(s:msg) == 'Y'
-        system('git pull')
-        source $HOME/.vimrc
+      let s:msg = "Let's update! (Y/n) : "
+      let s:answer = input(s:msg)
+      if s:answer == 'y' || s:answer == 'Y'
+        call system('git --git-dir=$HOME/.vim/vimrc/.git pull')
+        echo "Update complete !"
       endif
     else
       echo "You're up to date !"
     endif
+    unlet! s:answer
+    unlet! s:msg
     unlet! s:isupdate
   endif
 endfunction
