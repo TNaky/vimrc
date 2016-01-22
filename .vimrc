@@ -321,7 +321,7 @@ if executable('latexmk')
       :silent! echon "$pvc_view_file_via_temporary = 0;" . "\n"
     :redir END
   endif
-  
+
   " texファイルをQuickRunでコンパイルする際の設定
   let g:quickrun_config['tex'] = {
     \ 'command' : 'latexmk',
@@ -714,6 +714,34 @@ if has('syntax')
   call ZnkakSpace()
 endif
 
+" 自動更新をするかどうか[0: off, 1: on]
+let s:is_auto_update = 1
+
+" rcファイルを更新する
+function! CheckUpdate()
+  if executable('git')
+    let s:isupdate = system('git fetch &> /dev/null')
+    if s:isupdate != 0
+      let s:msg = printf(a:msg . "(Y/n) : ")
+      if input(s:msg) == 'y' || input(s:msg) == 'Y'
+        system('git pull')
+        source $HOME/.vimrc
+      endif
+    else
+      echo "You're up to date !"
+    endif
+    unlet! s:isupdate
+  endif
+endfunction
+
+" rcファイルの更新をチェックする
+if s:is_auto_update == 1
+  augroup check_update
+    autocmd!
+    autocmd VimEnter * call CheckUpdate()
+  augroup END
+endif
+
 " バイナリ編集（xxd）モード（vim -b で起動，もしくは *.bin ファイルを開くと起動）
 augroup Binary
   au!
@@ -738,5 +766,5 @@ augroup END
 
 augroup Gitk
   autocmd!
-  autocmd FileType git :setlocal foldlevel=99
+  autocmd FileType git setlocal foldlevel=99
 augroup END
