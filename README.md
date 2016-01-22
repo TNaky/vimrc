@@ -2,6 +2,13 @@
 ======
 Vimの設定ファイルであるvimrcについて
 
+# 配置
+
+```zsh
+git clone https://github.com/TNaky/vimrc.git ${HOME}/.vim/vimrc
+ln -s ${HOME}/.vim/vimrc/.vimrc/ ${HOME}/.vimrc
+```
+
 # Vim環境
 
 ver 7.4 +lua環境で作成
