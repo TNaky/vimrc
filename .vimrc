@@ -326,7 +326,7 @@ if executable('latexmk')
   let g:quickrun_config['tex'] = {
     \ 'command' : 'latexmk',
     \ 'outputter' : 'error',
-    \ 'outputter/error/success' : 'null',
+    \ 'outputter/error/success' : 'buffer',
     \ 'outputter/error/error' : 'quickfix',
     \ 'srcfile' : expand("%"),
     \ 'cmdopt': '-pdfdvi',
@@ -339,6 +339,7 @@ if executable('latexmk')
       \ '%S:p:r.fls',
       \ '%S:p:r.log',
       \ '%S:p:r.out',
+      \ '%S:p:r.synctex.gz',
     \ ],
     \ 'exec': ['%c %o %a %s']
   \ }
