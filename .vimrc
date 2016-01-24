@@ -698,6 +698,16 @@ set clipboard+=unnamed
 " 検索時の文字色を変更
 hi Search ctermfg=Blue
 
+" Vim起動時に背景色を透明化
+augroup bg_clear
+  autocmd!
+  autocmd VimEnter,ColorScheme * highlight Normal ctermbg=NONE
+  autocmd VimEnter,ColorScheme * highlight LineNr ctermbg=NONE
+  autocmd VimEnter,ColorScheme * highlight SignColumn ctermbg=NONE
+  autocmd VimEnter,ColorScheme * highlight VertSplit ctermbg=NONE
+  autocmd VimEnter,ColorScheme * highlight NonText ctermbg=NONE
+augroup END
+
 " 全角スペースを表示
 function! ZnkakSpace()
   highlight ZnkakSpace cterm=underline ctermfg=grey gui=underline guifg=grey
