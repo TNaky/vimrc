@@ -79,6 +79,8 @@ if has('vim_starting')
   NeoBundle 'Shougo/neosnippet'
   " 各種スニペット
   NeoBundle 'Shougo/neosnippet-snippets'
+  " 各種スニペットファイル
+  NeoBundle 'honza/vim-snippets'
   " 構文チェックをしてくれまする
   NeoBundle 'scrooloose/syntastic.git'
   " Uniteを利用してカラースキーム一覧表示を行う(:Unite colorscheme -auto-preview)
@@ -247,6 +249,7 @@ endif
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
+let g:neosnippet#snippets_directory='$HOME/.vim/bundle/vim-snippets/snippets'
 
 " いわゆるタグジャンプについての設定(auto-ctagsの設定なわけだが)
 " 読み込むタグファイルを設定
@@ -261,7 +264,7 @@ endif
 let g:auto_ctags_tags_args = '--tag-relative --recurse --sort=yes --edit_action'
 
 if executable('ctags')
-  " LaTeXでtexファイルからpdfを生成するコマンドを叩く際の設定ファイルが有るかどうか確認
+  " ctagsのコマンドがインストールされているかどうかを確認
   if !filereadable(expand('$HOME/.ctags'))
     " 設定ファイルが無い場合生成して，設定内容を書込
     :let outputfile = '$HOME/.ctags'
