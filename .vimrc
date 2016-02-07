@@ -137,8 +137,6 @@ if has('vim_starting')
   NeoBundle 'fuenor/qfixhowm'
   " Vim用のgrepプラグイン
   NeoBundle 'fuenor/qfixgrep'
-  " GitkのVimバージョン的なプラグイン
-  NeoBundle 'gregsexton/gitv'
 
   " 以下カラースキーム
   " olarized カラースキーム
@@ -728,37 +726,6 @@ if has('syntax')
   call ZnkakSpace()
 endif
 
-" 自動更新をするかどうか[0: off, 1: on]
-let s:is_auto_update = 1
-
-" rcファイルを更新する
-function! CheckUpdate()
-  if executable('git')
-    let s:isupdate = system("git --git-dir=$HOME/.vim/vimrc/.git fetch &> /dev/null")
-    if s:isupdate != 0
-      let s:msg = "Let's update! (Y/n) : "
-      let s:answer = input(s:msg)
-      if s:answer == 'y' || s:answer == 'Y'
-        call system('git --git-dir=$HOME/.vim/vimrc/.git pull')
-        echo "Update complete !"
-      endif
-    else
-      echo "You're up to date !"
-    endif
-    unlet! s:answer
-    unlet! s:msg
-    unlet! s:isupdate
-  endif
-endfunction
-
-" rcファイルの更新をチェックする
-if s:is_auto_update == 1
-  augroup check_update
-    autocmd!
-    autocmd VimEnter * call CheckUpdate()
-  augroup END
-endif
-
 " バイナリ編集（xxd）モード（vim -b で起動，もしくは *.bin ファイルを開くと起動）
 augroup Binary
   au!
@@ -779,9 +746,4 @@ augroup END
 augroup cpp_path
   autocmd!
   autocmd FileType cpp setlocal path+=.,/usr/include,/usr/local/include
-augroup END
-
-augroup Gitk
-  autocmd!
-  autocmd FileType git setlocal foldlevel=99
 augroup END
