@@ -137,6 +137,8 @@ if has('vim_starting')
   NeoBundle 'fuenor/qfixhowm'
   " Vim用のgrepプラグイン
   NeoBundle 'fuenor/qfixgrep'
+  " Vimでカレンダー
+  NeoBundle 'itchyny/calendar.vim'
 
   " 以下カラースキーム
   " olarized カラースキーム
@@ -386,6 +388,10 @@ endif
 if !exists('g:tcomment_types')
   let g:tcomment_types = {}
 endif
+
+" calendar.vimの設定
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
 
 " QFixHowmの設定
 " QuickFixウィンドウでもプレビューや絞り込みを有効化
