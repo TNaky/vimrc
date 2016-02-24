@@ -4,6 +4,14 @@ Vimの設定ファイルであるvimrcについて
 
 # 配置
 
+## auto install
+
+```zsh
+sh -c "$(curl -fsSL https://raw.github.com/TNaky/vimrc/master/install.sh)"
+```
+
+## manual install
+
 ```zsh
 mkdir -p ${HOME}/.vim
 git clone https://github.com/TNaky/vimrc.git ${HOME}/.vim/vimrc
