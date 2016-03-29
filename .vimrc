@@ -687,6 +687,10 @@ set writebackup
 au InsertEnter,InsertLeave * set cursorline!
 " 挿入モード中のみ編集中の行番号をハイライト標示
 hi CursorLineNr term=bold   cterm=NONE ctermfg=228 ctermbg=NONE
+" 挿入モード中のみ編集中の列をハイライト表示
+au InsertEnter,InsertLeave * set cursorcolumn!
+" 挿入モード中のみ編集中の列をハイライト標示
+hi CursorColumnNr term=bold   cterm=NONE ctermfg=228 ctermbg=NONE
 " ファイル形式の自動検出
 filetype plugin indent on
 " シンタックスカラーを有効化
