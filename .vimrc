@@ -128,8 +128,6 @@ if has('vim_starting')
   NeoBundle 'plasticboy/vim-markdown'
   " Processing のシンタックスハイライト＆リファレンス参照用
   NeoBundle 'sophacles/vim-processing'
-  " インデントを視覚化
-  NeoBundle 'nathanaelkane/vim-indent-guides'
   " ANSIカラーを表示反映
   " :AnsiEscで有効無効を切り替え
   NeoBundle 'vim-scripts/AnsiEsc.vim'
@@ -400,19 +398,6 @@ let g:calendar_google_task = 1
 let QFixWin_EnableMode = 1
 " QFixHowm/QFixGrepの結果表示にロケーションリストを使用する/しない
 let QFix_UseLocationList = 1
-
-" インデントの視覚化をオンにします
-let g:indent_guides_enable_on_vim_startup = 1
-" インデントの大きさ
-let g:indent_guides_start_level = 2
-" インデントに割り振られるデフォルトカラーを無効化
-let g:indent_guides_auto_colors = 0
-" 偶数番目のカラー
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333344 ctermbg=darkgray
-" 奇数番目のカラー
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#444433 ctermbg=gray
-" 幅
-let g:indent_guides_guide_size = 1
 
 " vim-gitgutterの設定
 let g:gitgutter_sign_added = '✚'
