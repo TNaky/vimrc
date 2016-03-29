@@ -139,6 +139,8 @@ if has('vim_starting')
   NeoBundle 'fuenor/qfixgrep'
   " Vimでカレンダー
   NeoBundle 'itchyny/calendar.vim'
+  " バッファセレクタ
+  NeoBundle 'itchyny/thumbnail.vim'
 
   " 以下カラースキーム
   " olarized カラースキーム
