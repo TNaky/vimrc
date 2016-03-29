@@ -16,7 +16,7 @@ echo $OS
 MESS=''
 if `which vim > /dev/null 2>&1`; then
   if `vim --version | grep +lua > /dev/null 2>&1`; then
-    vimrcをgithubからクローンする
+    # vimrcをgithubからクローンする
     mkdir -p ${HOME}/.vim
     git clone https://github.com/TNaky/vimrc.git ${HOME}/.vim/vimrc
     ln -s ${HOME}/.vim/vimrc/.vimrc ${HOME}/.vimrc
