@@ -139,6 +139,8 @@ if has('vim_starting')
   NeoBundle 'itchyny/calendar.vim'
   " バッファセレクタ
   NeoBundle 'itchyny/thumbnail.vim'
+  " インデントを視覚化
+  NeoBundle 'Yggdroot/indentLine'
 
   " 以下カラースキーム
   " olarized カラースキーム
@@ -170,7 +172,6 @@ if has('vim_starting')
   call neobundle#end()
   " 未インストールのプラグインがないかチェックを実行
   NeoBundleCheck
-  NeoBundleClean
 endif
 
 " Filerの設定
@@ -671,13 +672,13 @@ set nobackup
 " 書込前にバックアップを作成し，書込成功後削除
 set writebackup
 " 挿入モード中のみ編集中の行をハイライト表示
-au InsertEnter,InsertLeave * set cursorline!
+" au InsertEnter,InsertLeave * set cursorline!
 " 挿入モード中のみ編集中の行番号をハイライト標示
-hi CursorLineNr term=bold   cterm=NONE ctermfg=228 ctermbg=NONE
+" hi CursorLineNr term=bold   cterm=NONE ctermfg=228 ctermbg=NONE
 " 挿入モード中のみ編集中の列をハイライト表示
-au InsertEnter,InsertLeave * set cursorcolumn!
+" au InsertEnter,InsertLeave * set cursorcolumn!
 " 挿入モード中のみ編集中の列をハイライト標示
-hi CursorColumnNr term=bold   cterm=NONE ctermfg=228 ctermbg=NONE
+" hi CursorColumnNr term=bold   cterm=NONE ctermfg=228 ctermbg=NONE
 " ファイル形式の自動検出
 filetype plugin indent on
 " シンタックスカラーを有効化
