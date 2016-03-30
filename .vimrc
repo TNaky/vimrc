@@ -253,6 +253,8 @@ if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
 let g:neosnippet#snippets_directory='$HOME/.vim/bundle/vim-snippets/snippets'
+" texファイルを編集する際にlatexのスニペットを有効化
+let g:tex_flavor='latex'
 
 " いわゆるタグジャンプについての設定(auto-ctagsの設定なわけだが)
 " 読み込むタグファイルを設定
