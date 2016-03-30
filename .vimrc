@@ -141,6 +141,8 @@ if has('vim_starting')
   NeoBundle 'itchyny/thumbnail.vim'
   " インデントを視覚化
   NeoBundle 'Yggdroot/indentLine'
+  " HTMLやCSSのコードを展開してくれるプラグイン
+  NeoBundle 'mattn/emmet-vim'
 
   " 以下カラースキーム
   " olarized カラースキーム
@@ -393,6 +395,9 @@ endif
 " calendar.vimの設定
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
+
+" Emmetのキーバインド
+let g:user_emmet_leader_key='<c-e>'
 
 " QFixHowmの設定
 " QuickFixウィンドウでもプレビューや絞り込みを有効化
