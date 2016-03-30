@@ -183,6 +183,9 @@ let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_tree_indentation = 2
 " 開いたファイルのディレクトリへVimのカレントディレクトリを自動移動
 let g:vimfiler_enable_auto_cd = 1
+" ディレクトリ選択状態のEnterをtreeの展開へ変更
+autocmd FileType vimfiler nmap <buffer> <CR> <Plug>(vimfiler_expand_or_edit)
+
 
 " 入力補完設定
 if neobundle#is_installed('neocomplete.vim')
