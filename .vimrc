@@ -128,8 +128,6 @@ if has('vim_starting')
   NeoBundle 'plasticboy/vim-markdown'
   " Processing のシンタックスハイライト＆リファレンス参照用
   NeoBundle 'sophacles/vim-processing'
-  " インデントを視覚化
-  NeoBundle 'nathanaelkane/vim-indent-guides'
   " ANSIカラーを表示反映
   " :AnsiEscで有効無効を切り替え
   NeoBundle 'vim-scripts/AnsiEsc.vim'
@@ -139,6 +137,10 @@ if has('vim_starting')
   NeoBundle 'fuenor/qfixgrep'
   " Vimでカレンダー
   NeoBundle 'itchyny/calendar.vim'
+  " バッファセレクタ
+  NeoBundle 'itchyny/thumbnail.vim'
+  " インデントを視覚化
+  NeoBundle 'Yggdroot/indentLine'
 
   " 以下カラースキーム
   " olarized カラースキーム
@@ -170,7 +172,6 @@ if has('vim_starting')
   call neobundle#end()
   " 未インストールのプラグインがないかチェックを実行
   NeoBundleCheck
-  NeoBundleClean
 endif
 
 " Filerの設定
@@ -398,19 +399,6 @@ let g:calendar_google_task = 1
 let QFixWin_EnableMode = 1
 " QFixHowm/QFixGrepの結果表示にロケーションリストを使用する/しない
 let QFix_UseLocationList = 1
-
-" インデントの視覚化をオンにします
-let g:indent_guides_enable_on_vim_startup = 1
-" インデントの大きさ
-let g:indent_guides_start_level = 2
-" インデントに割り振られるデフォルトカラーを無効化
-let g:indent_guides_auto_colors = 0
-" 偶数番目のカラー
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333344 ctermbg=darkgray
-" 奇数番目のカラー
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#444433 ctermbg=gray
-" 幅
-let g:indent_guides_guide_size = 1
 
 " vim-gitgutterの設定
 let g:gitgutter_sign_added = '✚'
@@ -684,9 +672,13 @@ set nobackup
 " 書込前にバックアップを作成し，書込成功後削除
 set writebackup
 " 挿入モード中のみ編集中の行をハイライト表示
-au InsertEnter,InsertLeave * set cursorline!
+" au InsertEnter,InsertLeave * set cursorline!
 " 挿入モード中のみ編集中の行番号をハイライト標示
-hi CursorLineNr term=bold   cterm=NONE ctermfg=228 ctermbg=NONE
+" hi CursorLineNr term=bold   cterm=NONE ctermfg=228 ctermbg=NONE
+" 挿入モード中のみ編集中の列をハイライト表示
+" au InsertEnter,InsertLeave * set cursorcolumn!
+" 挿入モード中のみ編集中の列をハイライト標示
+" hi CursorColumnNr term=bold   cterm=NONE ctermfg=228 ctermbg=NONE
 " ファイル形式の自動検出
 filetype plugin indent on
 " シンタックスカラーを有効化
