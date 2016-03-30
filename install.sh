@@ -28,4 +28,6 @@ if `which vim > /dev/null 2>&1`; then
 else
   MESS="Vimがインストールされていません"
 fi
+
+# luaが有効なVimがない場合，OSに即したインストール方法を示します．
 echo $MESS
