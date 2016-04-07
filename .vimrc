@@ -143,6 +143,8 @@ if has('vim_starting')
   NeoBundle 'Yggdroot/indentLine'
   " HTMLやCSSのコードを展開してくれるプラグイン
   NeoBundle 'mattn/emmet-vim'
+  " バイナリファイルを目grepするためのすごいやつ
+  NeoBundle 'Shougo/vinarise'
 
   " 以下カラースキーム
   " olarized カラースキーム
