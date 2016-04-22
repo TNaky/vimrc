@@ -145,6 +145,8 @@ if has('vim_starting')
   NeoBundle 'mattn/emmet-vim'
   " バイナリファイルを目grepするためのすごいやつ
   NeoBundle 'Shougo/vinarise'
+  " 起動時にスプラッシュ画面を表示するためのプラグイン
+  " NeoBundle 'thinca/vim-splash'
 
   " 以下カラースキーム
   " olarized カラースキーム
