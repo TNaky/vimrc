@@ -185,6 +185,8 @@ let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_tree_indentation = 2
 " 開いたファイルのディレクトリへVimのカレントディレクトリを自動移動
 let g:vimfiler_enable_auto_cd = 1
+" :e .でVimFilerを起動
+let g:vimfiler_ignore_pattern='\(^\.\|\~$\|\.pyc$\|\.[oad]$\)'
 " ディレクトリ選択状態のEnterをtreeの展開へ変更
 autocmd FileType vimfiler nmap <buffer> <CR> <Plug>(vimfiler_expand_or_edit)
 
@@ -562,7 +564,7 @@ nnoremap s/ :%s/
 " 選択範囲の文字を上書きペースする
 vnoremap p "0p
 " Filerのキーバインド（<silent> をコマンド前につけると，実行されるコマンドがコンソールに非表示になる）
-nnoremap <silent> <F2> :VimFiler -split -winwidth=30 -simple -toggle<Cr>
+nnoremap <silent> <F2> :VimFiler -split -winwidth=30 -simple -no-quit<Cr>
 " 入力補完のキーバインド
 " tabキーで次の検索候補を選択
 inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
