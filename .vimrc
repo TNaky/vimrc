@@ -145,6 +145,12 @@ if has('vim_starting')
   NeoBundle 'mattn/emmet-vim'
   " バイナリファイルを目grepするためのすごいやつ
   NeoBundle 'Shougo/vinarise'
+  " JSの補完用プラグイン
+  NeoBundle 'mattn/jscomplete-vim'
+  " Node.js用の補完用プラグイン
+  NeoBundle 'myhere/vim-nodejs-complete'
+  " gfでJSのrequire()されているモジュールへジャンプ
+  NeoBundle 'moll/vim-node'
   " 起動時にスプラッシュ画面を表示するためのプラグイン
   " NeoBundle 'thinca/vim-splash'
 
@@ -233,9 +239,17 @@ if neobundle#is_installed('neocomplete.vim')
   let g:neocomplete#keyword_patterns._ = '\h\w*'
 
   " jedi-vimの設定
-  autocm FileType python setlocal omnifunc=jedi#completions completeopt-=preview
+  autocmd FileType python setlocal omnifunc=jedi#completions completeopt-=preview
   let g:jedi#completions_enabled = 0
   let g:jedi#auto_vim_configuration = 0
+  if !exists('g:neocomplete#force_omni_input_patterns')
+    let g:neocomplete#force_omni_input_patterns = {}
+  endif
+
+  " JS関連の補完設定
+  autocmd FileType javascript setlocal omnifunc=nodejscomplete#CompleteJS completeopt-=preview
+  let g:neocomplete#force_omni_input_patterns.javascript = 'nodejscomplete#CompleteJS'
+  let g:node_usejscomplete = 1
   if !exists('g:neocomplete#force_omni_input_patterns')
     let g:neocomplete#force_omni_input_patterns = {}
   endif
