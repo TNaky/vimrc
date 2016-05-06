@@ -338,6 +338,20 @@ let g:previm_open_cmd = 'open -a Firefox'
 " Syntasticの設定
 " LaTeXでのチェックが厳しすぎるからOffに
 let g:syntastic_ignore_files=['\.tex$']
+" ファイルオープン時はエラーチェック無し
+let g:syntastic_check_on_open=0
+" ファイル保存時にチェック
+let g:syntastic_check_on_save=1
+" ファイルクローズ時はエラーチェック無し
+let g:syntastic_check_on_wq=0
+" エラーのロケーションリストをオープン
+let g:syntastic_auto_loc_list=1
+" エラーメッセージウィンドウの高さ
+let g:syntastic_loc_list_height=7
+" エラーメッセージの書式
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 " LaTeX作成支援
 " latexmkがインストールされてるかどうか
