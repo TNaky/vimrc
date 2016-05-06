@@ -173,6 +173,10 @@ if has('vim_starting')
   NeoBundle 'tomasr/molokai'
   " Hybiridカラースキーム
   NeoBundle 'w0ng/vim-hybrid'
+  " JavaScript用カラースキーム
+  NeoBundle 'jelera/vim-javascript-syntax'
+  " JSON用カラースキーム
+  NeoBundle 'leshill/vim-json'
 
   " NeoBundleを終了
   call neobundle#end()
