@@ -157,30 +157,30 @@ if has('vim_starting')
   " NeoBundle 'thinca/vim-splash'
 
   " 以下カラースキーム
-  " olarized カラースキーム
-  NeoBundle 'altercation/vim-colors-solarized'
-  " mustang カラースキーム
-  NeoBundle 'croaker/mustang-vim'
-  " wombat カラースキームその１
-  NeoBundle 'jeffreyiacono/vim-colors-wombat'
-  " wombat カラースキームその２
-  NeoBundle 'vim-scripts/Wombat'
-  " jellybeans カラースキーム
-  NeoBundle 'nanotech/jellybeans.vim'
-  " lucius カラースキーム
-  NeoBundle 'vim-scripts/Lucius'
-  " zenburn カラースキーム
-  NeoBundle 'vim-scripts/Zenburn'
-  " mrkn256 カラースキーム
-  NeoBundle 'mrkn/mrkn256.vim'
-  " railscasts カラースキーム
-  NeoBundle 'jpo/vim-railscasts-theme'
-  " pyte カラースキーム
-  NeoBundle 'therubymug/vim-pyte'
+  " " olarized カラースキーム
+  " NeoBundle 'altercation/vim-colors-solarized'
+  " " mustang カラースキーム
+  " NeoBundle 'croaker/mustang-vim'
+  " " wombat カラースキームその１
+  " NeoBundle 'jeffreyiacono/vim-colors-wombat'
+  " " wombat カラースキームその２
+  " NeoBundle 'vim-scripts/Wombat'
+  " " jellybeans カラースキーム
+  " NeoBundle 'nanotech/jellybeans.vim'
+  " " lucius カラースキーム
+  " NeoBundle 'vim-scripts/Lucius'
+  " " zenburn カラースキーム
+  " NeoBundle 'vim-scripts/Zenburn'
+  " " mrkn256 カラースキーム
+  " NeoBundle 'mrkn/mrkn256.vim'
+  " " railscasts カラースキーム
+  " NeoBundle 'jpo/vim-railscasts-theme'
+  " " pyte カラースキーム
+  " NeoBundle 'therubymug/vim-pyte'
+  " " Hybiridカラースキーム
+  " NeoBundle 'w0ng/vim-hybrid'
   " molokai カラースキーム
   NeoBundle 'tomasr/molokai'
-  " Hybiridカラースキーム
-  NeoBundle 'w0ng/vim-hybrid'
   " JavaScript用カラースキーム
   NeoBundle 'jelera/vim-javascript-syntax'
   " JSON用カラースキーム
