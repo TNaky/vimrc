@@ -151,6 +151,8 @@ if has('vim_starting')
   NeoBundle 'myhere/vim-nodejs-complete'
   " gfでJSのrequire()されているモジュールへジャンプ
   NeoBundle 'moll/vim-node'
+  " tmuxとvimのウィンドウ分割を同一コマンドで移動するためのプラグイン
+  NeoBundle 'christoomey/vim-tmux-navigator'
   " 起動時にスプラッシュ画面を表示するためのプラグイン
   " NeoBundle 'thinca/vim-splash'
 
