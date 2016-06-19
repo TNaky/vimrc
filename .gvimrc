@@ -4,7 +4,7 @@ set guioptions-=T
 " 起動時のウィンドウ左にVimFilerを自動起動
 augroup start_vimfiler
   autocmd!
-  autocmd VimEnter * VimFiler -split -winwidth=30 -simple -no-quit
+  autocmd VimEnter * VimFiler
 augroup END
 " mac os x環境固有の設定
 if has('mac')
