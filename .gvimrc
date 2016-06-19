@@ -1,6 +1,14 @@
 " GVimの設定ファイルです
 " GUIツールバーを非表示
 set guioptions-=T
+" メニューバーを非表示にする
+set guioptions-=m
+" スクロールバーを非表示
+set guioptions-=r
+set guioptions-=R
+set guioptions-=l
+set guioptions-=L
+set guioptions-=b
 " 起動時のウィンドウ左にVimFilerを自動起動
 augroup start_vimfiler
   autocmd!
