@@ -581,6 +581,8 @@ endfunction
 " コマンドラインウィンドウでコマンド履歴を移動
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
+" 画面の再描画をCtrl-\に変更
+nnoremap <Bslash> <C-l>
 " インサートモード時のみESCをjjでも許可
 inoremap <silent> jj <ESC>
 " F1をを日本語ヘルプに変更
