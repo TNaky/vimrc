@@ -21,12 +21,22 @@ if `which vim > /dev/null 2>&1`; then
     git clone https://github.com/TNaky/vimrc.git ${HOME}/.vim/vimrc
     ln -s ${HOME}/.vim/vimrc/.vimrc ${HOME}/.vimrc
     vim
-    exit
+    MESS="正常にインストールされました"
   else
     MESS="インストールされているVimがluaオプション未対応"
+    if [ $OS = 'Mac' ]; then
+      MESS="$MESS\n  \033[93m  brew install lua\n  brew install vim --with-lua\033[0m"
+    elif [ $OS = 'Ubuntu' -o $OS = 'Debian' ]; then
+      MESS="$MESS\n  \033[93m  sudo aptitude install -y vim-nox\033[0m"
+    fi
   fi
 else
   MESS="Vimがインストールされていません"
+  if [ $OS = 'Mac' ]; then
+    MESS="$MESS\n  \033[93m  brew install lua\n  brew install vim --with-lua\033[0m"
+  elif [ $OS = 'Ubuntu' -o $OS = 'Debian' ]; then
+    MESS="$MESS\n  \033[93m  sudo aptitude install -y vim-nox\033[0m"
+  fi
 fi
 
 # luaが有効なVimがない場合，OSに即したインストール方法を示します．
