@@ -1,6 +1,4 @@
 " GVimの設定ファイルです
-" タブを表示
-set showtabline=2
 " GUIツールバーを非表示
 set guioptions-=T
 " 起動時のウィンドウ左にVimFilerを自動起動
