@@ -440,7 +440,14 @@ let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
 
 " Emmetのキーバインド
-let g:user_emmet_leader_key='<c-e>'
+" Ctrl-e,で展開
+let g:user_emmet_leader_key = '<C-e>'
+let g:user_emmet_settings = {
+  \ 'variables' : {
+    \ 'lang' : "ja"
+  \ },
+  \ 'indentation' : '  '
+\ }
 
 " QFixHowmの設定
 " QuickFixウィンドウでもプレビューや絞り込みを有効化
