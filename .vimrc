@@ -577,7 +577,15 @@ function! MyCharCode()
   return "'". char ."' ". nr
 endfunction
 
+" tmux-navigatorの自動キーマップをOFF
+let g:tmux_navigator_no_mappings = 1
+
 " キーマップ設定
+" tmux-navigatorのキーマップ
+nnoremap <silent> <C-h> :TmuxNavigateLeft<Cr>
+nnoremap <silent> <C-j> :TmuxNavigateDown<Cr>
+nnoremap <silent> <C-k> :TmuxNavigateUp<Cr>
+nnoremap <silent> <C-l> :TmuxNavigateRight<Cr>
 " コマンドラインウィンドウでコマンド履歴を移動
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
