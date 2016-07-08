@@ -74,7 +74,16 @@ if has('vim_starting')
     NeoBundle 'Shougo/neocomplcache.vim'
   endif
   " Python用入力補完
-  NeoBundle 'davidhalter/jedi-vim'
+  NeoBundleLazy 'davidhalter/jedi-vim', {
+    \ 'autoload': {
+      \ 'filetypes': [ 'python', 'python3', 'djangohtml' ],
+    \ },
+    \ 'build': {
+      \ 'mac': 'git submodule update --init',
+      \ 'unix': 'git submodule update --init',
+      \ 'linux': 'git submodule update --init'
+    \ }
+  \ }
   " スニペット補完プラグイン
   NeoBundle 'Shougo/neosnippet'
   " 各種スニペット
