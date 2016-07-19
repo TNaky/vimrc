@@ -84,6 +84,15 @@ if has('vim_starting')
       \ 'linux': 'git submodule update --init'
     \ }
   \ }
+  " Eclipseの入力支援等を利用するためのプラグイン
+  " NeoBundleLazy 'ervandew/eclim', {
+  "   \ 'autoload': {
+  "     \ 'filetype': [ 'java' ],
+  "   \ },
+  "   \ 'build': {
+  "     \ 'mac': 'ant -Declipse.home=/opt/homebrew-cask/Caskroom/eclipse-java/4.4.0/eclipse -Dvim.files='.escape(expand('~/.bundle/eclim'), '')
+  "   \ }
+  " \ }
   " スニペット補完プラグイン
   NeoBundle 'Shougo/neosnippet'
   " 各種スニペット
