@@ -12,7 +12,7 @@ set guioptions-=b
 " 起動時のウィンドウ左にVimFilerを自動起動
 augroup start_vimfiler
   autocmd!
-  autocmd VimEnter * VimFiler
+  autocmd VimEnter * nested if @% == '' && s:GetBufByte() == 0 | VimFiler | endif
 augroup END
 " mac os x環境固有の設定
 if has('mac')
