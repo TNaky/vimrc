@@ -21,3 +21,12 @@ if has('mac')
   " 半透明化
   set transparency=10
 endif
+" 起動時のバッファ・サイズを取得
+function! s:GetBufByte()
+  let byte = line2byte(line('$') + 1)
+  if byte == -1
+    return 0
+  else
+    return byte - 1
+  endif
+endfunction
