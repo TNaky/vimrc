@@ -19,6 +19,11 @@
 "   $ brew install --powerline --vim-powerline ricty
 "   でダウンロードできるから，インストールしてみて
 
+" eclipse等のアプリケーション保管場所を作成
+if !isdirectory(expand('$HOME/.vim/applications'))
+  call system('mkdir -p $HOME/.vim/applications')
+endif
+
 " プラグイン設定
 " NeoBundle が無ければインストール
 if !isdirectory(expand('$HOME/.vim/bundle'))
