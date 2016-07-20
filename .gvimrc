@@ -20,6 +20,10 @@ if has('mac')
   set guifont=Ricty-RegularForPowerline:h18
   " 半透明化
   set transparency=10
+elseif has('win32') || has('win64')
+  set guifont=MS_Gothic:h18
+  set guifontwide=MS_Gothic:h18
+  set transparency=10
 endif
 " 起動時のバッファ・サイズを取得
 function! s:GetBufByte()
