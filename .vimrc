@@ -19,11 +19,6 @@
 "   $ brew install --powerline --vim-powerline ricty
 "   でダウンロードできるから，インストールしてみて
 
-" eclipse等のアプリケーション保管場所を作成
-if !isdirectory(expand('$HOME/.vim/applications'))
-  call system('mkdir -p $HOME/.vim/applications')
-endif
-
 " プラグイン設定
 " NeoBundle が無ければインストール
 if !isdirectory(expand('$HOME/.vim/bundle'))
@@ -89,15 +84,6 @@ if has('vim_starting')
       \ 'linux': 'git submodule update --init'
     \ }
   \ }
-  " Eclipseの入力支援等を利用するためのプラグイン
-  " NeoBundleLazy 'ervandew/eclim', {
-  "   \ 'autoload': {
-  "     \ 'filetype': [ 'java' ],
-  "   \ },
-  "   \ 'build': {
-  "     \ 'mac': 'ant -Declipse.home=/opt/homebrew-cask/Caskroom/eclipse-java/4.4.0/eclipse -Dvim.files='.escape(expand('~/.bundle/eclim'), '')
-  "   \ }
-  " \ }
   " スニペット補完プラグイン
   NeoBundle 'Shougo/neosnippet'
   " 各種スニペット
