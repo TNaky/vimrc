@@ -213,6 +213,8 @@ let g:vimfiler_ignore_pattern='\(^\.\|\~$\|\.pyc$\|\.[oad]$\)'
 " ディレクトリ選択状態のEnterをtreeの展開へ変更
 autocmd FileType vimfiler nmap <buffer> <CR> <Plug>(vimfiler_expand_or_edit)
 
+" vim-markdown
+let g:vim_markdown_folding_disabled = 1
 
 " 入力補完設定
 if neobundle#is_installed('neocomplete.vim')
