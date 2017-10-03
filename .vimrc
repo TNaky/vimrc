@@ -593,10 +593,10 @@ let g:tmux_navigator_no_mappings = 1
 
 " キーマップ設定
 " tmux-navigatorのキーマップ
-nnoremap <silent> <C-h> :TmuxNavigateLeft<Cr>
-nnoremap <silent> <C-j> :TmuxNavigateDown<Cr>
-nnoremap <silent> <C-k> :TmuxNavigateUp<Cr>
-nnoremap <silent> <C-l> :TmuxNavigateRight<Cr>
+nnoremap <silent> <C-w>h :TmuxNavigateLeft<Cr>
+nnoremap <silent> <C-w>j :TmuxNavigateDown<Cr>
+nnoremap <silent> <C-w>k :TmuxNavigateUp<Cr>
+nnoremap <silent> <C-w>l :TmuxNavigateRight<Cr>
 " コマンドラインウィンドウでコマンド履歴を移動
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
@@ -626,7 +626,7 @@ nnoremap < <C-w><
 " 置換
 nnoremap s/ :%s/
 " 選択範囲の文字を上書きペースする
-vnoremap p "0p
+" vnoremap p "0p
 " Filerのキーバインド（<silent> をコマンド前につけると，実行されるコマンドがコンソールに非表示になる）
 nnoremap <silent> <F2> :VimFiler -split -winwidth=30 -simple -no-quit<Cr>
 " 入力補完のキーバインド
